@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MD Mosharof Hossain - Innovative Computer Scientist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c5530;
+            --primary-dark: #1e3a23;
+            --secondary: #4a7c59;
+            --accent: #8fb996;
+            --light: #f8faf9;
+            --dark: #2d3748;
+            --gray: #718096;
+            --success: #38a169;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --gradient-light: linear-gradient(135deg, #4a7c59 0%, #8fb996 100%);
+            --education-bg: #f0f9f0;
+            --experience-bg: #f0fdf0;
+        }
+        /* :root {
+            --primary: #6b99b0a4;
+            /* Your specified dark blue-gray */
+            --primary-dark: #253238;
+            /* Darker version of primary */
+            --secondary: #5a7a8a;
+            /* Medium blue-gray */
+            --accent: #7b9aaa;
+            /* Soft blue-gray accent */
+            --light: #f0f4f6;
+            /* Very light blue-gray background */
+            --dark: #1a252b;
+            /* Deep dark blue-gray text */
+            --gray: #5a6d78;
+            /* Muted blue-gray text */
+            --success: #354953;
+            /* Same as primary for consistency */
+            --white: #ffffff;
+            /* Clean white */
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --gradient-light: linear-gradient(135deg, #354953 0%, #5a7a8a 100%);
+            --education-bg: #f5f8fa;
+            /* Pale blue-gray section background */
+            --experience-bg: #f8fafb;
+            /* Light gray-blue background */
+        } */
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdf4 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .resume-container {
+            margin: 0 auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .resume {
+            display: flex;
+            background-color: var(--white);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .resume::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 35%;
+            background: var(--gradient);
+            color: var(--white);
+            padding: 40px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .sidebar::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 20px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 10px 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .about-text {
+            font-size: 14px;
+            line-height: 1.7;
+            opacity: 0.9;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-item {
+            margin-bottom: 5px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .skill-name {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .skill-percentage {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--white);
+            border-radius: 10px;
+            position: relative;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .languages-list {
+            list-style: none;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .language-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .language-name {
+            font-weight: 500;
+        }
+
+        .language-level {
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--education-bg);
+        }
+
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cert-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .cert-badge:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main {
+            width: 65%;
+            padding: 40px 50px;
+            background: var(--white);
+        }
+
+        .main-section {
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 25px;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 12px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 40px 40px 0;
+            border-color: transparent var(--accent) transparent transparent;
+        }
+
+        .main-title::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 35px 35px 0;
+            border-color: transparent rgba(255, 255, 255, 0.3) transparent transparent;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: var(--gradient);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 3px solid var(--primary);
+            z-index: 2;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .timeline-period {
+            background: var(--gradient);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .timeline-subtitle {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .timeline-content {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .timeline-content ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 5px;
+        }
+
+        .publication-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-card {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .publication-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-size: 16px;
+        }
+
+        .publication-authors {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .publication-journal {
+            font-size: 14px;
+            font-style: italic;
+            color: var(--primary);
+        }
+
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-title i {
+            margin-right: 8px;
+            color: var(--accent);
+        }
+
+        .project-description {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: var(--white);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--primary);
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .resume {
+                flex-direction: column;
+            }
+
+            .sidebar,
+            .main {
+                width: 100%;
+            }
+
+            .sidebar {
+                padding: 30px 20px;
+            }
+
+            .main {
+                padding: 30px 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .timeline-period {
+                align-self: flex-start;
+            }
+
+            .main-title {
+                font-size: 20px;
+                padding: 12px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="resume-container">
+        <div class="resume">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="profile-img">
+                    <img src="HOSSAIN.jpeg" alt="MD Mosharof Hossain">
+                </div>
+                <h1 class="name fade-in">MD MOSHAROF HOSSAIN</h1>
+                <p class="title fade-in delay-1">PhD Candidate in Computer Science & Technology</p>
+
+                <div class="contact-info fade-in delay-2">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Zhengzhou, China</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(+86) 15514386529</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>mosharofrasel330@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>Bangladeshi</span>
+                    </div>
+                </div>
+
+                <div class="section fade-in">
+                    <h2 class="section-title"><i class="fas fa-user"></i> ABOUT ME</h2>
+                    <p class="about-text">
+                        I am a passionate Computer Science researcher currently pursuing my PhD at Zhengzhou University.
+                        My goal is to build a rewarding career in a dynamic organization that values creativity and
+                        performance. I aim to leverage my education and experience in a meaningful role that supports
+                        organizational objectives while providing opportunities for career and personal growth.
+                    </p>
+                </div>
+
+                <div class="section fade-in delay-1">
+                    <h2 class="section-title"><i class="fas fa-star"></i> SKILLS</h2>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Android Studio</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Web Design</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">C/C++</span>
+                                <span class="skill-percentage">82%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Docker/Kubernetes</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section fade-in delay-2">
+                    <h2 class="section-title"><i class="fas fa-language"></i> LANGUAGES</h2>
+                    <ul class="languages-list">
+                        <li class="language-item">
+                            <span class="language-name">Bengali</span>
+                            <span class="language-level">Native</span>
+                        </li>
+                        <li class="language-item">
+                            <span class="language-name">English</span>
+                            <span class="language-level">Fluent</span>
+                        </li>
+                        <li class="language-item">
+                            <span class="language-name">Chinese</span>
+                            <span class="language-level">HSK 3</span>
+                        </li>
+                        <li class="language-item">
+                            <span class="language-name">Urdu/Hindi</span>
+                            <span class="language-level">Fluent</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="section fade-in delay-3">
+                    <h2 class="section-title"><i class="fas fa-award"></i> CERTIFICATIONS</h2>
+                    <div class="certifications">
+                        <div class="cert-badge">TEFL (120 hours)</div>
+                        <div class="cert-badge">HSK 3 (94%)</div>
+                        <div class="cert-badge">China-ASEAN Training</div>
+                        <div class="cert-badge">Technical Writing</div>
+                    </div>
+                </div>
+                <div class="section fade-in delay-3">
+                    <h2 class="section-title"><i class="fas fa-award"></i>COURSES & TRAINING</h2>
+                    <div class="certifications">
+                        <div class="cert-badge">World Vocational College Skills Competition</div>
+                        <div class="cert-badge">City Computer Training Center</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="main">
+                <div class="main-section fade-in">
+                    <h2 class="main-title">EDUCATION</h2>
+                    <div class="education-container">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <div class="timeline-title">PhD in Computer Science and Technology</div>
+                                    <div class="timeline-period">2023 - Current</div>
+                                </div>
+                                <div class="timeline-subtitle">Zhengzhou University, Zhengzhou, China</div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <div class="timeline-title">MSc in Computer Science Technology</div>
+                                    <div class="timeline-period">2020 - 2023</div>
+                                </div>
+                                <div class="timeline-subtitle">Zhongyuan University of Technology, Zhengzhou, China
+                                </div>
+                                <div class="timeline-content">Final Grade: 3.8/4.0</div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <div class="timeline-title">BSc in Computer Science Engineering</div>
+                                    <div class="timeline-period">2014 - 2018</div>
+                                </div>
+                                <div class="timeline-subtitle">Daffodil International University, Dhaka, Bangladesh
+                                </div>
+                                <div class="timeline-content">Final Grade: 3.29/4.0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-section fade-in delay-1">
+                    <h2 class="main-title">WORK EXPERIENCE</h2>
+
+                    <div style="display: flex; gap: 10px;">
+                        <!-- ESL Teacher Card -->
+                        <div class="project-card" style="flex: 1;">
+                            <div class="project-title">
+                                <i class="fas fa-chalkboard-teacher"></i> ESL Teacher
+                            </div>
+                            <div
+                                style="background: var(--gradient); color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 10px;">
+                                2017 - 2019
+                            </div>
+                            <div style="background: rgba(37, 99, 235, 0.05); padding: 15px;">
+                                <h4
+                                    style="color: var(--primary);font-size: 14px; font-weight: 600;margin-bottom: 10px; ">
+                                    Key Responsibilities:</h4>
+                                <ul style="margin-left: 20px; font-size: 13px; color: var(--gray);">
+                                    <li style="margin-bottom: 5px; line-height: 1.4;">Taught ESL to 150+ students</li>
+                                    <li style="margin-bottom: 5px; line-height: 1.4;">Developed lesson plans and
+                                        monitored progress</li>
+                                    <li style="margin-bottom: 5px; line-height: 1.4;">Improved students' language skills
+                                    </li>
+                                    <li style="margin-bottom: 5px; line-height: 1.4;">Led extracurricular activities
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Junior IT Manager Card -->
+                        <div class="project-card" style="flex: 1;">
+                            <div class="project-title">
+                                <i class="fas fa-laptop-code"></i> Junior IT Manager
+                            </div>
+                            <div
+                                style="background: var(--gradient); color: white; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; display: inline-block; margin-bottom: 10px;">
+                                2015 - 2017
+                            </div>
+                            <div style="background: rgba(37, 99, 235, 0.05); padding: 15px; ">
+                                <h4
+                                    style="color: var(--primary); margin-bottom: 10px; font-size: 14px; font-weight: 600;">
+                                    Key Responsibilities:</h4>
+                                <ul style="margin-left: 20px; font-size: 13px; color: var(--gray);">
+                                    <li style="margin-bottom: 5px; line-height: 1.4;">Collected information for
+                                        sales plans</li>
+                                    <li style="margin-bottom: 5px; line-height: 1.4;">Provided after-sales support</li>
+                                    <li style="margin-bottom: 5px; line-height: 1.4;">Conducted security checks</li>
+                                    <li style="margin-bottom: 5px; line-height: 1.4;">Developed IT policies and training
+                                        programs</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="main-section fade-in delay-2">
+                    <h2 class="main-title">PUBLICATIONS</h2>
+                    <div class="publication-item">
+                        <div class="publication-title">A novel approach to multilingual machine translation using hybrid
+                            deep learning</div>
+                        <div class="publication-authors">MD Mosharof Hossain, Long Zhang, Qiusheng Zheng, Shaohua Qian,
+                            Nan Dong</div>
+                        <div class="publication-journal">Electronic Information Engineering, Big Data, and Computer
+                            Technology (EIBDCT), 2023</div>
+                        <div class="publication-details">
+                            <span class="publication-volume">Volume 12642, Issue 126422P</span>
+                            <span class="publication-doi">DOI: 10.1117/12.2674943</span>
+                        </div>
+                    </div>
+
+                    <div class="publication-item">
+                        <div class="publication-title">Doctor's Appointment Booking Mobile Application</div>
+                        <div class="publication-authors">MD Mosharof Hossain (First Author)</div>
+                        <div class="publication-journal">United International Journal for Research and Technology, 2020
+                        </div>
+                        <div class="publication-details">
+                            <span class="publication-volume">Volume 01, Issue 07</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-section fade-in delay-3">
+                    <h2 class="main-title">PROJECTS</h2>
+
+                    <div style="display: flex; gap: 10px;">
+                        <div class="project-card">
+                            <div class="project-title"><i class="fas fa-home"></i> Android Home Automation System</div>
+                            <div class="project-description">
+                                Developed a comprehensive home automation system using Android Studio for smart home
+                                control
+                                and management.
+                            </div>
+                            <div class="tags">
+                                <div class="tag">Android Studio</div>
+                                <div class="tag">Java</div>
+                                <div class="tag">IoT</div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-title">
+                                <i class="fas fa-leaf"></i> Paddy Disease Identification App
+                            </div>
+                            <div class="project-description">
+                                Developed a mobile application that uses image processing and machine learning to
+                                identify paddy disease from leaf images.
+                            </div>
+                            <div class="tags">
+                                <div class="tag">Python</div>
+                                <div class="tag">TensorFlow</div>
+                                <div class="tag">OpenCV</div>
+                                <div class="tag">Android Studio</div>
+                                <div class="tag">Flask API</div>
+                                <div class="tag">Firebase</div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        // Animation for skill bars
+        document.addEventListener('DOMContentLoaded', function () {
+            const skillBars = document.querySelectorAll('.skill-progress');
+
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+
+            // Add hover effect to project cards and publication items
+            const interactiveCards = document.querySelectorAll('.project-card, .publication-item');
+            interactiveCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-5px)';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
